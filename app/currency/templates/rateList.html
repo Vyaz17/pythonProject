@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+<div class="container">
+    <table class="table" border="2">
+        <tr>
+            <th>ID</th>
+            <th>sale</th>
+            <th>buy</th>
+            <th>type</th>
+            <th>Details</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        {% for rate in rate_list %}
+        <tr>
+            <td>{{rate.id}}</td>
+            <td>{{rate.sale}}</td>
+            <td>{{rate.buy}}</td>
+            <td>{{rate.type}}</td>
+            <td><a href="{% url 'rate-details-link' pk=rate.pk %}">Details</a></td>
+            <td><a href="{% url 'rate-update-link' pk=rate.pk %}">Update</a></td>
+            <td><a href="{% url 'rate-delete-link' pk=rate.pk %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+<form class="form-check" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <button type="submit">Update</button>
+</form>
+{% endblock %}

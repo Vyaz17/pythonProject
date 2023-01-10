@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+Contact us:
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <br><br>
+    <button type="submit">Send</button>
+</form>
+{% endblock %}
+
+

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+Вы уверенны, что хотите удалить объект {{object.id}} ?
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <br><br>
+    <button type="submit">Удалить</button>
+</form>
+{% endblock %}
